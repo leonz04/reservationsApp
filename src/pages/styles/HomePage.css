@@ -1,0 +1,20 @@
+.homepage {
+    position: relative;
+    display: flex;
+    justify-content:flex-start;
+    
+}
+
+.section__filters {
+    padding: 2em 3em;
+    display: flex;
+    flex-direction: column;
+}
+
+.homepage__hotels__container{
+    align-self: flex-end;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+

@@ -1,0 +1,18 @@
+.header {
+    display: flex;
+    padding: 1em 2em 1.5em;
+    width: 100%;
+    background-color: #fff;
+    justify-content: space-between;
+    align-items: baseline;
+    box-shadow: 0 0 1em #0003;
+    margin-bottom: 1.5em;
+    position: fixed;
+    z-index: 2;
+    top: 0;
+}
+
+.header__nav__list {
+    display: flex;
+    gap: 1.5em;
+}

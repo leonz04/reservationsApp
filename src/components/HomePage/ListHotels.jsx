@@ -3,18 +3,11 @@ import HotelCard from "./HotelCard"
 import './styles/ListHotels.css'
 
 
-const ListHotels = ({hotelsFilter,citySelected}) => {
+const ListHotels = ({hotelsFilter}) => {
 
 const hotels = useSelector(states => states.hotels)
 
-  
-  
-  
-
- 
-
-
-  return (
+    return (
     <div className="container__list__hotels">
         {
           !hotelsFilter || hotelsFilter.length==0

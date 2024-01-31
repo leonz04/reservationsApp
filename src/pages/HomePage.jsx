@@ -6,19 +6,18 @@ import FilterName from '../components/HomePage/FilterName'
 import FilterPrice from '../components/HomePage/FilterPrice'
 import FilterCities from '../components/HomePage/FilterCities'
 import FilterCountry from '../components/HomePage/FilterCountry'
+import './styles/HomePage.css'
 
 const HomePage = () => {
 
   const [nameInput, setnameInput] = useState('')
   const [fromTo, setFromTo] = useState({
     from: 0,
-    to: Infinity
-  }
-  )
+    to: 9999
+  })
   const [citySelected, setCitySelected] = useState('')
-  const [countryFil, setCountryFil] = useState('')
+  const [countryFil, setCountryFil] = useState('all countries')
 
-  const[idCity, setIdCity] =useState('all cities')
 
   const [countryId, setCountryId] = useState()
 
@@ -45,17 +44,22 @@ const HomePage = () => {
     // Filter Name
     const filterName = hotelInfo.name.toLowerCase().includes(nameInput)
     //Filter price
-    const priceHotel = +hotelInfo.price
+    const priceHotel = Number(hotelInfo.price)
 
     const filterPrice = priceHotel >= fromTo.from && priceHotel <= fromTo.to
+    
 
     //filter cities
     //se hicieron con el backend
 
-    const filterCountry = hotelInfo.city.countryId==countryId;
+    const filterCountry = countryFil==="all countries" ? true : countryId=="allC" ? true : hotelInfo.city.countryId==countryId  ;
+
+    console.log(filterCountry);
+    console.log(filterPrice);
+    console.log(filterName);
 
 
-    return (filterCountry && filterPrice && filterName ) 
+    return filterCountry  && filterPrice && filterName  
   })
 
 
@@ -63,29 +67,48 @@ const HomePage = () => {
 
 
   return (
-    <div>
-      <FilterName
-        setnameInput={setnameInput}
+    <div className='homepage'>
+      <section className='section__filters'>
+        <h2>Filters</h2>
+      
+      <FilterPrice 
+      setFromTo={setFromTo}
+      setCountryFil={setCountryFil}
+      setnameInput={setnameInput}
+
+
       />
-      <FilterPrice setFromTo={setFromTo} />
+
       <FilterCountry 
       setCountryFil={setCountryFil}
-      setIdCity={setIdCity}
       setCountryId={setCountryId}
+      setnameInput={setnameInput}
+      setFromTo={setFromTo}
+      
  />
       <FilterCities 
       setCitySelected={setCitySelected}
        setCountryFil={ setCountryFil}
-       countryFil={countryFil}
-       idCity={idCity}
        countryId={countryId}
        setCountryId={setCountryId}
+       setnameInput={setnameInput}
+       setFromTo={setFromTo}
       />
+      </section>
+    <div className='homepage__hotels__container'>
+      <FilterName
+        setnameInput={setnameInput}
+        setCountryFil={setCountryFil}
+        setCountryId={setCountryId}
+        setFromTo={setFromTo}
+      />
+
       <ListHotels 
         hotelsFilter={hotelsFiltered}
         citySelected={citySelected}
         
         />
+        </div>
     </div>
   )
 }

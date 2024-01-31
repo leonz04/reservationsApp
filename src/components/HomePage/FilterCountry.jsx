@@ -1,7 +1,8 @@
 import React, { useEffect } from 'react'
 import useFetch from '../../hooks/useFetch'
+import './styles/FilterCountry.css'
 
-const FilterCountry = ({setCountryFil,setCountryId}) => {
+const FilterCountry = ({setCountryFil,setCountryId,setnameInput,setFromTo}) => {
 
     let url = 'https://hotels-api.academlo.tech/cities'
     const [cities, getCities] = useFetch(url)
@@ -31,19 +32,20 @@ const FilterCountry = ({setCountryFil,setCountryId}) => {
 
             if(country=='all countries'){
                 setCountryId('allC')
-                setCountryFil('')                
+                setCountryFil('all countries')
+                
 
-                
-              
-                
+    
             }else{
                 setCountryId(country.countryId)
                 setCountryFil(country.name)
            
-
-
-
-            }            
+            } 
+            setnameInput('')
+            setFromTo({
+                from:0,
+                to:9999
+            })       
         }
         
     
@@ -51,19 +53,19 @@ const FilterCountry = ({setCountryFil,setCountryId}) => {
 
 
   return (
-    <div>
-        <h3>Countries</h3>
-            <ul>
-                <li onClick={()=>handleFilteredCountries('all countries')}> All Countries</li>
+    <section className='filter__country__container'>
+        <h3 className='filter__country__title' >Countries</h3>
+            <ul className='filter__country__list'>
+                <li className='filter__country__item'  onClick={()=>handleFilteredCountries('all countries')}> All Countries</li>
                 {
                     countries.map(country => (
-                        <li onClick={()=>handleFilteredCountries(country)} key={country.countryId}>
+                        <li className='filter__country__item' onClick={()=>handleFilteredCountries(country)} key={country.countryId}>
                             {country.name}
                         </li>
                     ))
                 }
             </ul>
-    </div>
+    </section>
   )
 }
 

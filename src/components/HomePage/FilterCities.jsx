@@ -2,8 +2,9 @@ import React, { useEffect } from 'react'
 import useFetch from '../../hooks/useFetch'
 import { getHotelsThunk } from '../../store/states/hotels.state'
 import { useDispatch } from 'react-redux'
+import './styles/FilterCountry.css'
 
-const FilterCities = ({ setCitySelected, countryFil,setCountryId,idCity, countryId }) => {
+const FilterCities = ({ setCitySelected, setCountryId,countryId,setnameInput,setCountryFil,setFromTo }) => {
 
     let urlCities = 'https://hotels-api.academlo.tech/cities'
     const [cities, getCities] = useFetch(urlCities)
@@ -23,7 +24,7 @@ const FilterCities = ({ setCitySelected, countryFil,setCountryId,idCity, country
     useEffect(() => {
         let url = 'https://hotels-api.academlo.tech/hotels'
 
-        dispatch(getHotelsThunk(url))
+        dispatch(getHotelsThunk(url,setnameInput))
 
     }, [countryId])
 
@@ -31,6 +32,9 @@ const FilterCities = ({ setCitySelected, countryFil,setCountryId,idCity, country
 
 
     const handleFilterCities = (id, name) => {
+        setFromTo({from:0, to:9999})
+
+        setnameInput('')
 
         
         setCitySelected(name)
@@ -47,6 +51,8 @@ const FilterCities = ({ setCitySelected, countryFil,setCountryId,idCity, country
         }
         else if(name =='all cities'){
             setCountryId('')
+            setCountryFil('all countries')
+
 
             url = 'https://hotels-api.academlo.tech/hotels'
 
@@ -59,19 +65,19 @@ const FilterCities = ({ setCitySelected, countryFil,setCountryId,idCity, country
 
 
     return (
-        <div>
-            <h3>Cities</h3>
-            <ul>
-                <li onClick={() => handleFilterCities(0, 'all cities')}> All cities</li>
+        <section className='filter__country__container'>
+            <h3  className='filter__country__title'>Cities</h3>
+            <ul className='filter__country__list' >
+                <li className='filter__country__item' onClick={() => handleFilterCities(0, 'all cities')}> All cities</li>
                 {
                     cities?.map(city => (
-                        <li onClick={() => handleFilterCities(city.id, city.name)} key={city.id}>
+                        <li className='filter__country__item' onClick={() => handleFilterCities(city.id, city.name)} key={city.id}>
                             {city.name}
                         </li>
                     ))
                 }
             </ul>
-        </div>
+        </section>
     )
 }
 

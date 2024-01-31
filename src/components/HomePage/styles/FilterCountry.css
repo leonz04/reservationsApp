@@ -1,0 +1,21 @@
+.filter__country__title{
+    font-size: 1em;
+    text-align: center;
+    font-weight: 500;
+
+}
+
+.filter__country__item{
+    font-size: .8rem;
+    cursor: pointer;
+    padding: 0.5em;
+    transition: transform .2s ease;
+
+}
+
+.filter__country__item:hover {
+    transform: scale(1.05);
+    background-color: #fa404099;
+    color: #fff;
+    font-weight: 700;
+}
