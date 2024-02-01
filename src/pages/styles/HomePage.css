@@ -37,8 +37,16 @@
         padding: 0 2em;
         transform: translateX(-1000px);
         z-index: 15;
-        background-color: #fa4040b8;
+        background-color: #fa40408d;
         backdrop-filter: blur(15px);
+        transition: transform 1.1s ease;
+        font-size: 1.2rem;
+        color: white;
+        font-weight: 700; 
+        text-shadow: 0.1em 0.1em 0.2em #000;
+                
+
+
 
     }
 

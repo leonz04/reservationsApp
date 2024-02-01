@@ -43,3 +43,19 @@
 .slider__btn:hover{
     filter: brightness(1.1);
 }
+
+@media (min-width: 300px) and (max-width:800px){
+    .slider__exterior{
+        width: 100%;
+        max-width: 100%;
+        aspect-ratio: 1.5;
+        overflow: hidden;
+    }
+
+    .slider__img-container{
+        width: 100%;
+        aspect-ratio: 1.5;
+        padding: 0em;
+    }
+
+}

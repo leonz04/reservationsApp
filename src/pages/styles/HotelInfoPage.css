@@ -64,15 +64,13 @@
 }
 
 .hotel__map{
-margin: auto auto;
+    margin: auto auto;
     border-radius: 50%;
-    background-color: aqua;
     overflow: hidden;
     align-self: flex-start;
 }
 
 .slider__column{
-    background-color: aquamarine;
     min-width: 45%;
 }
 
@@ -86,8 +84,15 @@ margin: auto auto;
 
 
     .container__img__map{
+        padding: 0;
         display: flex;
         flex-direction: column;
+    }
+    .hotel__map{
+        width: 150px;
+        height: 150px;
+        margin-left: 10px;
+    
     }
 
 

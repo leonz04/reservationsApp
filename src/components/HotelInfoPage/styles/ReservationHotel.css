@@ -42,3 +42,10 @@
     border-radius: 0.7em;
     box-shadow: 0.1em 0.1em #0004;
 }
+
+@media (min-width: 300px) and (max-width:800px){
+    .reservation__inout__container{
+        width: 100%;
+        
+    }
+}

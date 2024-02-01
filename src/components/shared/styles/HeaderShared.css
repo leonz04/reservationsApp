@@ -8,7 +8,7 @@
     box-shadow: 0 0 1em #0003;
     margin-bottom: 1em;
     position: fixed;
-    z-index: 1;
+    z-index: 10;
     top: 0;
     height: 8vh;
 }
@@ -78,17 +78,25 @@
             width: 100%;
             z-index: 20;
             backdrop-filter: blur(15px);
-            background-color: #fa404061 ;
+            background-color: #fa40408d ;
             padding-top: 0.5em;
             padding-bottom: 0.5em;
+            transition: transform 1s ease;
+            font-size: 1.2rem;
+            color: white;
+            font-weight: 700;                 
+    
+    }
 
-
-                  
+    .header__nav__item a{
+        
+        text-shadow: 0.1em 0.1em 0.1em #000;
     
     }
 
    
     .bx-menu  {
+        color: #fa4006;
         display: flex;
         cursor: pointer;
         justify-content: end;
@@ -111,6 +119,8 @@
 
       .openMenu{
         transform: translateX(0);
+        transition: transform 1.2s ease;
+
 
       }
 

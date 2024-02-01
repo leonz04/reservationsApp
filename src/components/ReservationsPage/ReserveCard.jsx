@@ -19,8 +19,8 @@ const ReserveCard = ({reserve,deleteReservation,setReserveSelected}) => {
 
 
   return (
-    <article>
-        <header>
+    <article className='reserve__card'>
+        <header className='reserve__card__header'>
             <img className='reserve__card__img' src={reserve.hotel.images[0].url}/>
         </header>
         <section>
