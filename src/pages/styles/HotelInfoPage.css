@@ -3,6 +3,7 @@
     flex-direction: column;
     padding: 1em;
     flex-wrap: wrap;
+    position: relative;
     
 }
 
@@ -82,6 +83,12 @@
         padding: 0;
     }
 
+    
+
+    .info__description__hotel{
+        padding: 0;
+    }
+
 
     .container__img__map{
         padding: 0;
@@ -94,6 +101,7 @@
         margin-left: 10px;
     
     }
+
 
 
 }
