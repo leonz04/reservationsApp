@@ -59,6 +59,7 @@
     }
 
     .slider__btn{
-        border:0
+        border:0;
+        padding: 0;
     }
 }

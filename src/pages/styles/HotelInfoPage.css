@@ -83,10 +83,18 @@
         padding: 0;
     }
 
-    
+    .general__info{
+        padding: 1em 1em 1.5em;
+
+    }
 
     .info__description__hotel{
         padding: 0;
+    }
+    .reservation__map{
+        padding: 1em 1em 1.5em;
+
+
     }
 
 
