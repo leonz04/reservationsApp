@@ -58,4 +58,7 @@
         padding: 0em;
     }
 
+    .slider__btn{
+        border:0
+    }
 }
