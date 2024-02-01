@@ -6,3 +6,52 @@
     min-height: calc(100vh - 103px);
 
 }
+
+.register__title{
+    font-size: 1.6rem;
+    border: 1px solid #0003;
+    border-bottom: none;
+    width: 100%;
+    max-width: 400px;
+    padding: 1em 1.5em;
+    border-radius: 0.8em 0.8em 0 0;
+    text-align: center;
+    color: #fa4040;
+}
+
+.register__form{
+    width: 100%;
+    max-width: 400px;
+    padding: 1em 1.5em 4em;
+    border: 1px solid #0003;
+    display: grid;
+    gap: 0.8em;
+    border-radius: 0 0 1.2em 1.2em;
+}
+
+.register__form__field{
+    display: grid;
+    gap: 0.4em;
+}
+
+.register__form__label{
+    font-size: 1rem;
+    font-weight: 500;
+    padding-left: 0.8em;
+}
+
+.register__form__input{
+    padding: 0.5em 1em;
+    border: 1px solid #0003;
+    font-size: 1rem;
+    font-weight: 300;
+    text-transform: capitalize;
+}
+
+.register__form__btn{
+    background-color: #fa4040;
+    border: none;
+    padding: 0.7em 1em;
+    color: #fff;
+    font-size: 1.05rem;
+}

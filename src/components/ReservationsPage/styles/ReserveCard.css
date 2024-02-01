@@ -4,6 +4,99 @@
     cursor: pointer;
 }
 
+.reserve__card{
+    display: grid;
+    grid-template-columns: 2fr 5fr 3fr 1fr;
+    width: 100%;
+    max-width: 900px;
+    gap: 1em;
+    align-items: center;
+    border-radius: 1em;
+    box-shadow: 0.3em 0.3em 0.5em #0004;
+
+}
+
+.reserve__card__header{
+
+    border-radius: 1em;
+    overflow: hidden;
+}
+
+.reserve__data__hotel{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+    
+}
+.data__hotel__name{
+    
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.data__hotel__location{
+    font-size: .8rem;
+}
+
 .reserve__card__img{
     width: 200px;
 }
+
+.reserve__data__price{
+    
+    display: grid;
+    grid-template-rows: repeat(2,1fr);
+    gap: 1em;
+}
+
+.data__price__info{
+    position: relative;
+
+    display: grid;
+    grid-template-columns: 4fr 2fr;  
+
+}
+.price__info__label{   
+    
+    font-size: 1rem;
+    font-weight: 700;
+    font-style:oblique;
+}
+.days__info__label{   
+    
+    font-size: 1rem;
+    font-weight: 700;
+    font-style:oblique;
+}
+
+.price__info__label::after{
+    padding-left: 1.25em;    
+    content: 'usd$';
+    font-weight: 300;
+    font-size: 0.9rem;
+    align-self: flex-end;
+    vertical-align: top;
+    
+
+
+}
+
+.reserve__total__days{
+    font-size: 1rem;
+    font-weight: 500;
+
+}
+
+.reserve__delete__btn{
+    font-size: 1.2rem;
+    border: none;
+    width: 2.5em;
+    aspect-ratio: 1;
+    border-radius: 0.6em;
+    background-color: #fa4040d2;
+    color: #fff;
+
+}
+
+
+

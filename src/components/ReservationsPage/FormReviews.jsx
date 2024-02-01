@@ -1,8 +1,9 @@
 import React from 'react'
 import { useForm } from 'react-hook-form'
 import useCrud from '../../hooks/useCrud';
+import './styles/FormReviews.css'
 
-const FormReviews = ({reserveSelected,setReserveSelected}) => {
+const FormReviews = ({reserveSelected,setReserveSelected,setOpenModal}) => {
 
     console.log(reserveSelected);
 
@@ -25,10 +26,19 @@ const FormReviews = ({reserveSelected,setReserveSelected}) => {
 
         })
         setReserveSelected()
+        setOpenModal(true)
 
     }
+
+    const handleModal =()=>{
+        setOpenModal(true)
+
+
+    }
+
   return (
-    <div>
+    <div className='container__form__review'>
+        <div onClick={handleModal}>X</div>
         <form onSubmit={handleSubmit(submit)}>
             <h3>Form Reviews</h3>
             <label>
