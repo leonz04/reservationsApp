@@ -1,0 +1,9 @@
+.reserve__rating{
+    color: blue;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.reserve__card__img{
+    width: 200px;
+}

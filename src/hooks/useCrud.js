@@ -28,7 +28,12 @@ const useCrud =()=>{
         .then((result) => {
             console.log(result.data)
         }).catch((err) => {
+
             console.log(err)
+            if(err.response.status===403){
+            localStorage.removeItem('token')
+            localStorage.removeItem('user')
+            }
         });
 
     }
@@ -39,7 +44,7 @@ const useCrud =()=>{
         const url = `${baseUrl}${path}/${id}`
         axios.delete(url,getConfigToken())
         .then((result) => {
-            console.log(result.data)
+            setResponse(response.filter(elem=>elem.id!==id))
         }).catch((err) => {
             console.log(err)
         });

@@ -8,11 +8,53 @@
     box-shadow: 0 0 1em #0003;
     margin-bottom: 1.5em;
     position: fixed;
-    z-index: 2;
+    z-index: 10;
     top: 0;
+    height: 10vh;
 }
 
 .header__nav__list {
     display: flex;
     gap: 1.5em;
+}
+
+@media (min-width: 300px) and (max-width:800px){
+
+   
+
+    .header {
+        display: flex;
+        justify-content: space-between;
+        padding: 0;
+        padding-top: 1em;
+        padding-right: 1em;
+        padding-left: 2em;
+    }
+
+
+    
+    .header__nav__list{
+       
+            display: flex;
+            flex-direction: column;
+            left: 0;
+            justify-content: flex-start;  
+            align-items: flex-end;
+            overflow-x: auto;
+            gap: 1em;
+            transform: translateX(1000px);
+                  
+    
+    }
+
+    .bx-menu  {
+        display: flex;
+        justify-content: flex-end;
+        cursor: pointer;
+        text-align: right;
+        background-color: rgba(255, 255, 255, 0.756);       
+        font-size: 2.5rem;
+        
+      }
+
 }

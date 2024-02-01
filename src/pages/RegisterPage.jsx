@@ -1,6 +1,7 @@
 import React from 'react'
 import { useForm } from 'react-hook-form'
 import useAuth from '../hooks/useAuth'
+import './styles/RegisterPage.css'
 
 
 const RegisterPage = () => {
@@ -23,33 +24,33 @@ const RegisterPage = () => {
 
   }
   return (
-    <div>
+    <div className='registerpage'>
       <h2>Register</h2>
       <form onSubmit={handleSubmit(submit)}>
-        <label>
-          <span> First Name</span>
+        <article>
+          <label> First Name</label>
           <input {...register('firstName')}type="text" />
-        </label>
-        <label>
-          <span>Last Name</span>
+        </article>
+        <article>
+          <label>Last Name</label>
           <input {...register('lastName')} type="text" />
-        </label>
-        <label>
-          <span>Email</span>
+        </article>
+        <article>
+          <label>Email</label>
           <input {...register('email')} type="text" />
-        </label>
-        <label>
-          <span>Password</span>
+        </article>
+        <article>
+          <label>Password</label>
           <input {...register('password')} type="password" />
-        </label>
-        <label>
+        </article>
+        <article>
           <span>Gender</span>
           <select {...register('gender')}>
             <option value="male">male</option>
             <option value="female">female</option>          
             <option value="othe">other</option>          
           </select>
-        </label>
+        </article>
         <button>Submit</button>
       </form>
     </div>

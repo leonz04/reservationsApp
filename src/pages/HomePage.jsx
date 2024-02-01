@@ -9,6 +9,8 @@ import FilterCountry from '../components/HomePage/FilterCountry'
 import './styles/HomePage.css'
 
 const HomePage = () => {
+  window.location.reload
+
 
   const [nameInput, setnameInput] = useState('')
   const [fromTo, setFromTo] = useState({
@@ -20,6 +22,7 @@ const HomePage = () => {
 
 
   const [countryId, setCountryId] = useState()
+
 
 
 
@@ -53,10 +56,6 @@ const HomePage = () => {
     //se hicieron con el backend
 
     const filterCountry = countryFil==="all countries" ? true : countryId=="allC" ? true : hotelInfo.city.countryId==countryId  ;
-
-    console.log(filterCountry);
-    console.log(filterPrice);
-    console.log(filterName);
 
 
     return filterCountry  && filterPrice && filterName  
