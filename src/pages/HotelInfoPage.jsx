@@ -33,7 +33,10 @@ const HotelInfoPage = () => {
             </header>
 
             <div className='container__img__map'>
+                <div className='slider__column'>
                 <SliderImgs hotel={hotel} />
+                <h3>Servicios Incluidos</h3>
+                </div>
                 <div className='info__description__hotel'>
                     <div className='reservation__map'>
                         {
@@ -48,7 +51,7 @@ const HotelInfoPage = () => {
                             {
                                 hotel && (
 
-                                    <Map defaultCenter={[+hotel?.lat, +hotel?.lon]} height={150} zoom={17} >
+                                    <Map defaultCenter={[+hotel?.lat, +hotel?.lon]} width={200} height={200} zoom={17} >
                                         <ZoomControl />
                                         <Marker
                                             width={100}

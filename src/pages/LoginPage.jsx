@@ -21,20 +21,12 @@ const LoginPage = ({}) => {
       email:"",
       password:"",
     })
-
-
-
   }
-
   const handleLogout = () => {
-    logout();
-  
-    navigate('/login')
-    
+    logout();  
+    navigate('/login')    
 
-  }
-
- 
+  } 
 
   if(localStorage.getItem('token')){
     const { firstName, lastName, email } = JSON.parse(localStorage.getItem('user'))

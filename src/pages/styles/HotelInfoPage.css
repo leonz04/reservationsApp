@@ -45,13 +45,13 @@
 .reservation__map{
     display: grid;
     grid-template-columns: repeat(2,1fr);
+    
 }
 
 .container__img__map{
-    background-color: lightgray;
-    display: grid;
-    grid-template-columns: repeat(2,1fr);
-    padding: 3em;
+    display: flex;
+    padding: 1.5em;
+    align-items: flex-start;
     
     
     
@@ -63,14 +63,35 @@
     display: grid;
 }
 
+.hotel__map{
+margin: auto auto;
+    border-radius: 50%;
+    background-color: aqua;
+    overflow: hidden;
+    align-self: flex-start;
+}
+
+.slider__column{
+    background-color: aquamarine;
+    min-width: 45%;
+}
 
 
-/* .hotel__map{
-    min-width:200px;
-    max-width: 600px;
-    width: 100%;
-    padding: 1em 0;
-} */
+
+@media (min-width: 300px) and (max-width:800px){
+
+    .container__hotel__info{
+        padding: 0;
+    }
+
+
+    .container__img__map{
+        display: flex;
+        flex-direction: column;
+    }
+
+
+}
 
 
 

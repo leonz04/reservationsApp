@@ -20,6 +20,61 @@
     flex-direction: column;
     justify-content: center;
     padding-left: 20px;
-    padding-top: 100px;
+    padding-top: 30px;
+    
+
+}
+.bxs-filter-alt{
+    display: none;
+}
+
+@media (min-width: 300px) and (max-width:800px){
+
+    .section__filters {
+        top: 120px;
+        position: fixed;
+        width: 100%;
+        padding: 0 2em;
+        transform: translateX(-1000px);
+        z-index: 15;
+        background-color: #fa4040b8;
+        backdrop-filter: blur(15px);
+
+    }
+
+    .homepage {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        
+        
+    }
+
+    .homepage__hotels__container{
+        width: 100%;
+        padding: 0;
+        padding-bottom: 12vh;
+    }
+
+    .bxs-filter-alt{
+        width: 50px;
+        height: 50px;
+        background-color:#fa4040;
+        display: flex;
+        position: fixed;
+        top:10vh;
+        border-radius: 50%;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.9rem;
+        margin-left: 0.5em;
+        color: white;
+        box-shadow: 0 0 0.2em rgba(0, 0, 0, 0.809);
+        z-index: 25;
+        
+        
+    }
+
+
 }
 

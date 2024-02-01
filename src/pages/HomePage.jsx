@@ -9,7 +9,6 @@ import FilterCountry from '../components/HomePage/FilterCountry'
 import './styles/HomePage.css'
 
 const HomePage = () => {
-  window.location.reload
 
 
   const [nameInput, setnameInput] = useState('')
@@ -22,6 +21,7 @@ const HomePage = () => {
 
 
   const [countryId, setCountryId] = useState()
+  const [openFilters, setOpenFilters] = useState(false)
 
 
 
@@ -61,13 +61,18 @@ const HomePage = () => {
     return filterCountry  && filterPrice && filterName  
   })
 
+  const handleFilters=()=>{
+    setOpenFilters(!openFilters)
+  }
+
 
 
 
 
   return (
     <div className='homepage'>
-      <section className='section__filters'>
+      <i onClick={handleFilters} class='bx bxs-filter-alt' ></i>
+      <section className={`section__filters  ${openFilters?'openMenu':''}`}>
         <h2>Filters</h2>
       
       <FilterPrice 

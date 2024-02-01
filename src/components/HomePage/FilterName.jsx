@@ -14,8 +14,6 @@ const FilterName = ({setnameInput,setCountryFil,setCountryId,setFromTo}) => {
         setFromTo({from:0, to:9999})
         console.log(inputSearch.current.value);
         inputSearch.current.value=''
-        
-
     }
 
   

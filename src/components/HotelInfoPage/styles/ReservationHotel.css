@@ -1,0 +1,44 @@
+
+.reservation{
+}
+.reservation__title{
+    font-size: 1.5rem;
+    color: #fa4040;
+    margin-bottom: 0.5em;
+
+}
+
+.reservation__form{
+
+}
+.reservation__inout__container{
+    display: grid;
+    width: 60%;
+}
+
+.reservation__form__label{
+    font-size: 1.3rem;
+    padding-left: 0.3em;
+    margin-bottom: 0.1em;
+
+}
+
+.reservation__form__input{
+    font-size: 1.3rem;
+    margin-bottom: 0.2em;
+    
+}
+
+
+.reservation__btn{
+
+    margin-top: 1em;
+    width: 100px;
+    padding: 0.5em 0;
+    font-size: 1rem;
+    background-color: #fa4040cc;
+    color: #fff;
+    border: none;
+    border-radius: 0.7em;
+    box-shadow: 0.1em 0.1em #0004;
+}

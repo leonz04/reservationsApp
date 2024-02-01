@@ -6,16 +6,33 @@
     justify-content: space-between;
     align-items: baseline;
     box-shadow: 0 0 1em #0003;
-    margin-bottom: 1.5em;
+    margin-bottom: 1em;
     position: fixed;
-    z-index: 10;
+    z-index: 1;
     top: 0;
-    height: 10vh;
+    height: 8vh;
+}
+
+.header__logo{
+    font-size: 1.8rem;
 }
 
 .header__nav__list {
+    width: 100%;
     display: flex;
     gap: 1.5em;
+    z-index: 1000;
+}
+
+.header__nav__item a{
+    text-decoration: none;
+    color: inherit;
+    text-shadow: 0.1em 0.1em #0002;
+
+}
+.bx-menu {
+    display: none;
+
 }
 
 @media (min-width: 300px) and (max-width:800px){
@@ -24,17 +41,31 @@
 
     .header {
         display: flex;
-        justify-content: space-between;
         padding: 0;
-        padding-top: 1em;
-        padding-right: 1em;
-        padding-left: 2em;
+        align-items: center;
+            margin-bottom: 0em;
+
+     
+    }
+
+   
+
+    .header__nav{
+        min-width: 100%;
+        margin-top: 0;
+
+    }
+    .header__logo{
+        font-size: 1.8rem;
+        padding-left: 0.7em;
+        
     }
 
 
     
     .header__nav__list{
-       
+           top:8vh;
+            position: absolute;       
             display: flex;
             flex-direction: column;
             left: 0;
@@ -43,18 +74,51 @@
             overflow-x: auto;
             gap: 1em;
             transform: translateX(1000px);
+            padding-right: 1.2em;
+            width: 100%;
+            z-index: 20;
+            backdrop-filter: blur(15px);
+            background-color: #fa404061 ;
+            padding-top: 0.5em;
+            padding-bottom: 0.5em;
+
+
                   
     
     }
 
+   
     .bx-menu  {
         display: flex;
-        justify-content: flex-end;
         cursor: pointer;
-        text-align: right;
-        background-color: rgba(255, 255, 255, 0.756);       
-        font-size: 2.5rem;
+        justify-content: end;
+        font-size: 3.5rem;
+        padding-top:0.5em ;
+        margin:0;
+        margin-bottom: 0.4em;
+        padding-right: 0.1em;
+        width: 100%;
+
+        
         
       }
+      
+    .bx-menu::before{
+        margin: 0;
+    }
+
+     
+
+      .openMenu{
+        transform: translateX(0);
+
+      }
+
+      .mobile__menu{
+        align-content:flex-end;
+      
+
+      }
+     
 
 }

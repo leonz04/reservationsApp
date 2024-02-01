@@ -19,6 +19,7 @@ function App() {
     <div className='app'>
       <HeaderShared
       />
+      
       <Routes>
         <Route path="/" element={<HomePage/>}/>
         <Route path="/register" element={<RegisterPage/>}/>
