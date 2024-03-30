@@ -32,18 +32,14 @@ const HomePage = () => {
   const hotels = useSelector(states => states.hotels)
 
   useEffect(() => {
-    const url = 'https://hotels-api.academlo.tech/hotels'
+    const url = 'http://localhost:8080/hotels'
     dispatch(getHotelsThunk(url))
 
 
   }, [])
 
-
-
-
- 
-
-  const hotelsFiltered = hotels?.results.filter(hotelInfo => {
+ console.log(hotels)
+  const hotelsFiltered = hotels?.filter(hotelInfo => {
     // Filter Name
     const filterName = hotelInfo.name.toLowerCase().includes(nameInput)
     //Filter price
@@ -71,7 +67,7 @@ const HomePage = () => {
 
   return (
     <div className='homepage'>
-      <i onClick={handleFilters} class='bx bxs-filter-alt' ></i>
+      <i onClick={handleFilters} className='bx bxs-filter-alt' ></i>
       <section className={`section__filters  ${openFilters?'openMenu':''}`}>
         <h2>Filters</h2>
       

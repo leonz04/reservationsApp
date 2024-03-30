@@ -4,7 +4,7 @@ import HotelCard from '../HomePage/HotelCard'
 
 const OtherHotels = ({cityId,hotelId}) => {
 
-const url =`https://hotels-api.academlo.tech/hotels?cityId=${cityId}`
+const url =`http://localhost:8080/hotels?cityId=${cityId}`
     const [hotels, getHotels]=useFetch(url)
 
     useEffect(() => {
@@ -19,7 +19,7 @@ const url =`https://hotels-api.academlo.tech/hotels?cityId=${cityId}`
         <h2>Other Hotels Near</h2>
             <div className='container__list__hotels'>
                 {
-                   hotels?.results.filter(hotelInfo=> hotelInfo.id !== hotelId ).map(hotelInfo =>(
+                   hotels?.filter(hotelInfo=> hotelInfo.id !== hotelId ).map(hotelInfo =>(
                     <HotelCard
                     key={hotelInfo.id}
                     hotelInfo={hotelInfo}

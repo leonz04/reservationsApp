@@ -12,7 +12,7 @@ const hotels = useSelector(states => states.hotels)
         {
           !hotelsFilter || hotelsFilter.length==0
           ?(
-            hotels?.results.map(hotel=>(
+            hotels?.map(hotel=>(
               <>
               <HotelCard
               key={hotel.id}

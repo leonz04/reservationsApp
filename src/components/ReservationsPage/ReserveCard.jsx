@@ -18,6 +18,7 @@ const ReserveCard = ({reserve,deleteReservation,setReserveSelected,setOpenModal}
         setOpenModal(false)
     }
 
+    console.log(reserve)
 
   return (
     <article className='reserve__card'>

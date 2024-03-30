@@ -8,7 +8,10 @@ import HotelInfoPage from './pages/HotelInfoPage'
 import HeaderShared from './components/shared/HeaderShared'
 import ReservationsPage from './pages/ReservationsPage'
 import ProtectedRoutes from './pages/ProtectedRoutes'
+// import ResetPage from './pages/ResetPage'
+
 import { useState } from 'react'
+import VerifyPage from './pages/VerifyPage'
 
 function App() {
   
@@ -23,6 +26,10 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage/>}/>
         <Route path="/register" element={<RegisterPage/>}/>
+        {/* <Route path="/reset_password" element={<ResetPage/>}/> */}
+        <Route path="/verify/:code" element={<VerifyPage/>}/>
+
+
         <Route path="/login" 
         element={
           <LoginPage

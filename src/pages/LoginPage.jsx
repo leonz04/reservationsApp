@@ -1,10 +1,10 @@
 import { useForm } from "react-hook-form"
 import useAuth from "../hooks/useAuth"
-import { useNavigate } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import './styles/LoginPage.css'
 
 
-const LoginPage = ({}) => {
+const LoginPage = () => {
   window.location.replace
 
   const {handleSubmit, reset,register}=useForm()
@@ -41,7 +41,7 @@ const LoginPage = ({}) => {
   return (
     <div className="loginpage__login">
       <header>
-        <img className="loginpage__img" src="/usrimgblack.png" alt="imgusr" / >
+        <img className="loginpage__img" src="/usrimgblack.png" alt="imgusr" />
       </header>
       <form className="loginpage__form" onSubmit={handleSubmit(submit)}>
         <h2 className="loginpage__form__title">User</h2>
@@ -55,9 +55,11 @@ const LoginPage = ({}) => {
         </label>
         <button className="loginpage__form__btn">Submit</button>
       </form>
+      <Link to="/reset_password">Recover Password</Link>
       
     </div>
   )
 }
 }
+
 export default LoginPage

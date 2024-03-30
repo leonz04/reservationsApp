@@ -59,6 +59,11 @@
   
 }
 
+.raiting{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 .info__description__hotel{
     padding: 1.5em;
     display: grid;

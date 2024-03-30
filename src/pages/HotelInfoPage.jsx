@@ -7,13 +7,15 @@ import OtherHotels from '../components/HotelInfoPage/OtherHotels'
 import ReservationHotel from '../components/HotelInfoPage/ReservationHotel'
 import SliderImgs from '../components/HotelInfoPage/SliderImgs'
 import CommentsSection from '../components/HotelInfoPage/CommentsSection'
+import Rating from '@mui/material/Rating';
+
 
 
 const HotelInfoPage = () => {
 
     const { id } = useParams()
 
-    const url = `https://hotels-api.academlo.tech/hotels/${id}`
+    const url = `http://localhost:8080/hotels/${id}`
 
     const [hotel, gethotel] = useFetch(url)
 
@@ -23,13 +25,13 @@ const HotelInfoPage = () => {
 
     }, [url])
 
-
+    console.log(hotel?.rating)
 
     return (
         <div className='container__hotel__info'>
             <header className='header__hotel__page'>
                 <h2 className='header__hotel__title'>{hotel?.name}</h2>
-                <span className='raiting'>Raiting</span>
+                <h3 className='raiting'>Rating<Rating name="half-rating-read" defaultValue={hotel?.rating} precision={0.5} readOnly /></h3>
             </header>
 
             <div className='container__img__map'>

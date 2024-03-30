@@ -1,5 +1,7 @@
 import React, { useEffect } from 'react'
 import useCrud from '../../hooks/useCrud'
+import Rating from '@mui/material/Rating';
+
 
 const CommentsSection = ({hotelId}) => {
 
@@ -16,9 +18,9 @@ const CommentsSection = ({hotelId}) => {
     <div>
         <div>
             {
-                reviews?.map(reviewInfo=>(
+                reviews?.results.map(reviewInfo=>(
                     <div>
-                        <div>{reviewInfo.raiting}⭐</div>
+                        <div><Rating name="half-rating-read" defaultValue={reviewInfo.rating}precision={0.5} readOnly /></div>
                         <p key={reviewInfo.id}>{reviewInfo.comment}</p>
                     </div>
                 ))

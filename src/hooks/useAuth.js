@@ -6,6 +6,7 @@ const useAuth = () => {
 
     const [login,setLogin]=useState(false)
 
+
     useEffect(() => {
         const token = localStorage.getItem('token');
         if (token) {
@@ -17,9 +18,11 @@ const useAuth = () => {
 
     //Register
 
-    const createNewUser =data=>{
+    const createNewUser =userData=>{
+        const frontBaseUrl = `${location.protocol}//${location.host}/#/verify`;
+        const data = { ...userData, frontBaseUrl } 
         
-        const url='https://hotels-api.academlo.tech/users'
+        const url='http://localhost:8080/users'
         axios.post(url,data)
         .then((result) => {
             console.log(result.data);
@@ -30,27 +33,29 @@ const useAuth = () => {
         });
 
     }
+
+    
+
     // login
 
     const loginUser=data=>{
-        const url= 'https://hotels-api.academlo.tech/users/login'
+        const url= 'http://localhost:8080/users/login'
         axios.post(url,data)
         .then((result) => {
 
             console.log(result.data);
-            navigate('/')
+            //navigate('/')
             localStorage.setItem('token', result.data.token)
             localStorage.setItem('user',JSON.stringify(result.data.user))
             setLogin(true);
-            window.location.reload(); 
-
-
-            
+            //window.location.reload();      
         }).catch((err) => {
             console.log(err);
         });
         
     }
+
+    
     
     const logout = () => {
         localStorage.removeItem('token');

@@ -10,7 +10,8 @@ const RegisterPage = () => {
 
   const {createNewUser} =useAuth()  
 
-  const submit=data=>{
+  const submit=async data=>{
+    
 
     createNewUser(data)
 
@@ -23,6 +24,7 @@ const RegisterPage = () => {
     })
 
   }
+
   return (
     <div className='registerpage'>
       <h2 className='register__title'>Register</h2>
@@ -46,9 +48,9 @@ const RegisterPage = () => {
         <article className='register__form__field'>
           <label className='register__form__label'>Gender</label>
           <select className='register__form__input' {...register('gender')}>
-            <option value="male">male</option>
-            <option value="female">female</option>          
-            <option value="othe">other</option>          
+            <option value="Male">male</option>
+            <option value="Female">female</option>          
+            <option value="Other">other</option>          
           </select>
         </article>
         <button className='register__form__btn'>Submit</button>
