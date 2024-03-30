@@ -44,11 +44,11 @@ const useAuth = () => {
         .then((result) => {
 
             console.log(result.data);
-            //navigate('/')
+            navigate('/')
             localStorage.setItem('token', result.data.token)
             localStorage.setItem('user',JSON.stringify(result.data.user))
             setLogin(true);
-            //window.location.reload();      
+            window.location.reload();      
         }).catch((err) => {
             console.log(err);
         });
