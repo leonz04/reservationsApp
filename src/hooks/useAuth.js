@@ -22,7 +22,7 @@ const useAuth = () => {
         const frontBaseUrl = `${location.protocol}//${location.host}/#/verify`;
         const data = { ...userData, frontBaseUrl } 
         
-        const url='http://localhost:8080/users'
+        const url='https://reservationapp-backend-padz.onrender.com/users'
         axios.post(url,data)
         .then((result) => {
             console.log(result.data);
@@ -39,7 +39,7 @@ const useAuth = () => {
     // login
 
     const loginUser=data=>{
-        const url= 'http://localhost:8080/users/login'
+        const url= 'https://reservationapp-backend-padz.onrender.com/users/login'
         axios.post(url,data)
         .then((result) => {
 
