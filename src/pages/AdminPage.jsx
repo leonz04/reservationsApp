@@ -7,7 +7,7 @@ import useFetch from '../hooks/useFetch'
 
 const AdminPage = () => {
 
-  const urlCities='http://localhost:8080/cities'
+  const urlCities='https://reservationapp-backend-padz.onrender.com/cities'
   const [,,createHotel]=useCrud() 
   const [,,createImage]=useCrud() 
   const {handleSubmit, register, reset}=useForm()

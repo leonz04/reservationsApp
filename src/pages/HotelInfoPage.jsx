@@ -15,7 +15,7 @@ const HotelInfoPage = () => {
 
     const { id } = useParams()
 
-    const url = `http://localhost:8080/hotels/${id}`
+    const url = `https://reservationapp-backend-padz.onrender.com/hotels/${id}`
 
     const [hotel, gethotel] = useFetch(url)
 

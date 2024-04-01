@@ -5,7 +5,7 @@ import axios from "axios"
 const useCrud =()=>{
     const [response, setResponse] =useState()
 
-    const baseUrl='http://localhost:8080'
+    const baseUrl='https://reservationapp-backend-padz.onrender.com'
 
     //GET
     const getApi=(path)=>{
