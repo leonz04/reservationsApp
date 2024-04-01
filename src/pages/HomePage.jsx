@@ -32,7 +32,7 @@ const HomePage = () => {
   const hotels = useSelector(states => states.hotels)
 
   useEffect(() => {
-    const url = 'https://reservationapp-backend-padz.onrender.com/hotels'
+    const url = 'http://localhost:8080/hotels'
     dispatch(getHotelsThunk(url))
 
 

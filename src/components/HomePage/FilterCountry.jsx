@@ -4,7 +4,7 @@ import './styles/FilterCountry.css'
 
 const FilterCountry = ({setCountryFil,setCountryId,setnameInput,setFromTo}) => {
 
-    let url = 'https://reservationapp-backend-padz.onrender.com/cities'
+    let url = 'http://localhost:8080/cities'
     const [cities, getCities] = useFetch(url)
 
     useEffect(() => {

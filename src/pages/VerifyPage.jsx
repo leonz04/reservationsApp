@@ -16,7 +16,7 @@ const VerifyPage = () => {
     useEffect(() => {
      //   verify
 
-            const url=`https://reservationapp-backend-padz.onrender.com/users/verify/${emailCode}`
+            const url=`http://localhost:8080/users/verify/${emailCode}`
             axios.get(url)
             
             .then(res=>{

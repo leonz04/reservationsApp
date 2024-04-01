@@ -1,5 +1,4 @@
 import { createSlice } from "@reduxjs/toolkit";
-import axios from "axios";
 
 const cityFilterSlice =createSlice({
     name:'cityFilter',

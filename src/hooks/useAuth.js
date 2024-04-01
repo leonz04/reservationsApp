@@ -1,16 +1,21 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { setLoginG } from "../store/states/login.state";
 
 const useAuth = () => {
 
-    const [login,setLogin]=useState(false)
+    // const [login,setLogin]=useState(false)
+    const dispatch = useDispatch()
+    const login = useSelector(states => states.login)
+
 
 
     useEffect(() => {
         const token = localStorage.getItem('token');
         if (token) {
-          setLogin(true);
+            dispatch(setLoginG(true))
         }
       }, [login]);
 
@@ -22,7 +27,7 @@ const useAuth = () => {
         const frontBaseUrl = `${location.protocol}//${location.host}/#/verify`;
         const data = { ...userData, frontBaseUrl } 
         
-        const url='https://reservationapp-backend-padz.onrender.com/users'
+        const url='http://localhost:8080/users'
         axios.post(url,data)
         .then((result) => {
             console.log(result.data);
@@ -38,20 +43,21 @@ const useAuth = () => {
 
     // login
 
-    const loginUser=data=>{
-        const url= 'https://reservationapp-backend-padz.onrender.com/users/login'
-        axios.post(url,data)
-        .then((result) => {
+    const loginUser= async (data,e)=>{
 
-            console.log(result.data);
-            navigate('/')
-            localStorage.setItem('token', result.data.token)
-            localStorage.setItem('user',JSON.stringify(result.data.user))
-            setLogin(true);
-            window.location.reload();      
-        }).catch((err) => {
-            console.log(err);
-        });
+        const url= 'http://localhost:8080/users/login'
+        return axios.post(url,data)
+            .then((result) => {
+                
+                console.log(result.data);
+                navigate('/')
+                localStorage.setItem('token', result.data.token)
+                localStorage.setItem('user',JSON.stringify(result.data.user))
+                window.location.reload();  
+                
+            });
+       
+        
         
     }
 
@@ -60,7 +66,7 @@ const useAuth = () => {
     const logout = () => {
         localStorage.removeItem('token');
         localStorage.removeItem('user');
-        setLogin(false);
+        dispatch(setLoginG(!login))
         window.location.reload(); 
 
     };

@@ -12,6 +12,8 @@ import ProtectedRoutes from './pages/ProtectedRoutes'
 
 import { useState } from 'react'
 import VerifyPage from './pages/VerifyPage'
+import AdminPage from './pages/AdminPage'
+
 
 function App() {
   
@@ -28,6 +30,9 @@ function App() {
         <Route path="/register" element={<RegisterPage/>}/>
         {/* <Route path="/reset_password" element={<ResetPage/>}/> */}
         <Route path="/verify/:code" element={<VerifyPage/>}/>
+        <Route path="/admin" element={<AdminPage/>}/>
+
+        
 
 
         <Route path="/login" 

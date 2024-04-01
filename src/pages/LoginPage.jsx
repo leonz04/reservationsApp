@@ -2,6 +2,8 @@ import { useForm } from "react-hook-form"
 import useAuth from "../hooks/useAuth"
 import { Link, useNavigate } from "react-router-dom"
 import './styles/LoginPage.css'
+import { useDispatch } from "react-redux"
+import { useState } from "react"
 
 
 const LoginPage = () => {
@@ -12,15 +14,26 @@ const LoginPage = () => {
   const navigate=useNavigate()
 
   const {loginUser,logout} =useAuth() 
+  const dispatch = useDispatch()
 
-  const submit=data=>{
-    loginUser(data)
+  const [ error, setError ] = useState(false);
+
+
+
+
+  const submit=(data,e)=>{
     
-    console.log(localStorage.getItem('token'))    
-    reset({
-      email:"",
-      password:"",
-    })
+    loginUser(data)
+      .then(() => {
+        reset({
+          email:"",
+          password:"",
+        })
+
+      })
+      .catch(err => {
+        setError(true);
+      })
   }
   const handleLogout = () => {
     logout();  
@@ -29,10 +42,10 @@ const LoginPage = () => {
   } 
 
   if(localStorage.getItem('token')){
-    const { firstName, lastName, email } = JSON.parse(localStorage.getItem('user'))
+    const { firstName, lastName, email, rol } = JSON.parse(localStorage.getItem('user'))
     return (
       <div className="">
-        <h2>Welcome {firstName + ' ' + lastName}</h2>
+        <h2>Welcome {firstName + ' ' + lastName + ' '+ rol}</h2>
         <button onClick={handleLogout}>Logout</button>
       </div>
     )
@@ -55,6 +68,7 @@ const LoginPage = () => {
         </label>
         <button className="loginpage__form__btn">Submit</button>
       </form>
+      <p>{error?"incorrect credencial":""}</p>
       <Link to="/reset_password">Recover Password</Link>
       
     </div>
