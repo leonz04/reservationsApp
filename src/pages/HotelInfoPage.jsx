@@ -25,9 +25,10 @@ const HotelInfoPage = () => {
 
         gethotel()
 
-    }, [url])
+    }, [])
 
-
+    console.log(hotel)
+    const raiting=hotel?.rating
 
 
 
@@ -36,8 +37,10 @@ const HotelInfoPage = () => {
             <header className='header__hotel__page'>
                 <h2 className='header__hotel__title'>{hotel?.name}</h2>
                 <h3 className='raiting'>Rating</h3>
-                <Rating name="half-rating-read" defaultValue={hotel?.rating} precision={0.5} readOnly/>
+                <Rating name="half-rating-read" defaultValue={raiting} precision={0.5} readOnly/>
+
             </header>
+            
 
             <div className='container__img__map'>
                 <div className='slider__column'>

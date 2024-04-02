@@ -69,7 +69,7 @@ const LoginPage = () => {
         <button className="loginpage__form__btn">Submit</button>
       </form>
       <p>{error?"incorrect credencial":""}</p>
-      <Link to="/reset_password">Recover Password</Link>
+      {/* <Link to="/reset_password">Recover Password</Link> */}
       
     </div>
   )
