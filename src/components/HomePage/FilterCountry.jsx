@@ -4,7 +4,7 @@ import './styles/FilterCountry.css'
 
 const FilterCountry = ({setCountryFil,setCountryId,setnameInput,setFromTo}) => {
 
-    let url = 'https://reservationapp-backend-padz.onrender.com/cities'
+    let url = 'http://localhost:8080/cities'
     const [cities, getCities] = useFetch(url)
 
     useEffect(() => {
@@ -18,7 +18,7 @@ const FilterCountry = ({setCountryFil,setCountryId,setnameInput,setFromTo}) => {
     const countries= []
         
         for (let i =0; i<cities?.length;i++){
-            if (!countries.includes(cities[i].country)){
+            if (!couz|ntries.includes(cities[i].country)){
                 countries.push({
                     'name':cities[i].country,
                     'countryId':cities[i].countryId,
