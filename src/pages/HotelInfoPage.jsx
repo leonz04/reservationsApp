@@ -17,28 +17,26 @@ const HotelInfoPage = () => {
 
     const url = `https://reservationapp-backend-padz.onrender.com/hotels/${id}`
 
-    const urlReviews=`https://reservationapp-backend-padz.onrender.com/reviews?hotelId=${id}`
 
     const [hotel, gethotel] = useFetch(url)
-    const [reviews, getReviews] = useFetch(urlReviews)
 
 
     useEffect(() => {
 
         gethotel()
-        getReviews()
 
     }, [url])
 
-    console.log(`hoteles ${hotel}`)
-    console.log(`reviews ${reviews}`)
+
+
 
 
     return (
         <div className='container__hotel__info'>
             <header className='header__hotel__page'>
                 <h2 className='header__hotel__title'>{hotel?.name}</h2>
-                <h3 className='raiting'>Rating<Rating name="half-rating-read" defaultValue={hotel?.rating} precision={0.5} readOnly /></h3>
+                <h3 className='raiting'>Rating</h3>
+                <Rating name="half-rating-read" defaultValue={hotel?.rating} precision={0.5} readOnly/>
             </header>
 
             <div className='container__img__map'>

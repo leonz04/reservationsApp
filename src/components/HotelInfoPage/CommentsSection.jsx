@@ -18,7 +18,7 @@ const CommentsSection = ({hotelId}) => {
     <div>
         <div>
             {
-                reviews?.results.map(reviewInfo=>(
+                reviews?.results.filter(hotelReview=> hotelReview.hotel.id === hotelId ).map(reviewInfo=>(
                     <div>
                         <div><Rating name="half-rating-read" defaultValue={reviewInfo.rating}precision={0.5} readOnly /></div>
                         <p key={reviewInfo.id}>{reviewInfo.comment}</p>
