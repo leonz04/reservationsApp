@@ -4,7 +4,7 @@ import HotelCard from '../HomePage/HotelCard'
 
 const OtherHotels = ({cityId,hotelId}) => {
 
-const url =`https://reservationapp-backend-padz.onrender.com/hotels?cityId=${cityId}`
+const url =`http://localhost:8080/hotels?cityId=${cityId}`
     const [hotels, getHotels]=useFetch(url)
 
     useEffect(() => {

@@ -6,7 +6,7 @@ import './styles/FilterCountry.css'
 
 const FilterCities = ({ setCitySelected, setCountryId,countryId,setnameInput,setCountryFil,setFromTo }) => {
 
-    let urlCities = 'https://reservationapp-backend-padz.onrender.com/cities'
+    let urlCities = 'http://localhost:8080/cities'
     const [cities, getCities] = useFetch(urlCities)
 
     useEffect(() => {
@@ -22,7 +22,7 @@ const FilterCities = ({ setCitySelected, setCountryId,countryId,setnameInput,set
 
     
     useEffect(() => {
-        let url = 'https://reservationapp-backend-padz.onrender.com/hotels'
+        let url = 'http://localhost:8080/hotels'
 
         dispatch(getHotelsThunk(url,setnameInput))
 
@@ -38,15 +38,15 @@ const FilterCities = ({ setCitySelected, setCountryId,countryId,setnameInput,set
 
         
         setCitySelected(name)
-        let url = 'https://reservationapp-backend-padz.onrender.com/hotels'
+        let url = 'http://localhost:8080/hotels'
         if(countryId=='allC'){
-            url = 'https://reservationapp-backend-padz.onrender.com/hotels'
+            url = 'http://localhost:8080/hotels'
             setCountryId('')
 
         }
         
         else if (name !== 'all cities') {
-            url = `https://reservationapp-backend-padz.onrender.com/hotels?cityId=${id}`
+            url = `http://localhost:8080/hotels?cityId=${id}`
 
         }
         else if(name =='all cities'){
@@ -54,7 +54,7 @@ const FilterCities = ({ setCitySelected, setCountryId,countryId,setnameInput,set
             setCountryFil('all countries')
 
 
-            url = 'https://reservationapp-backend-padz.onrender.com/hotels'
+            url = 'http://localhost:8080/hotels'
 
         }
 

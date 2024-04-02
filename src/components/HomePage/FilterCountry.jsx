@@ -18,7 +18,7 @@ const FilterCountry = ({setCountryFil,setCountryId,setnameInput,setFromTo}) => {
     const countries= []
         
         for (let i =0; i<cities?.length;i++){
-            if (!couz|ntries.includes(cities[i].country)){
+            if (!countries.includes(cities[i].country)){
                 countries.push({
                     'name':cities[i].country,
                     'countryId':cities[i].countryId,
