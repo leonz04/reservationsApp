@@ -17,15 +17,22 @@ const HotelInfoPage = () => {
 
     const url = `https://reservationapp-backend-padz.onrender.com/hotels/${id}`
 
+    const urlReviews=`https://reservationapp-backend-padz.onrender.com/reviews?hotelId=${id}`
+
     const [hotel, gethotel] = useFetch(url)
+    const [reviews, getReviews] = useFetch(urlReviews)
+
 
     useEffect(() => {
 
         gethotel()
+        getReviews()
 
     }, [url])
 
-    console.log(hotel)
+    console.log(`hoteles ${hotel}`)
+    console.log(`reviews ${reviews}`)
+
 
     return (
         <div className='container__hotel__info'>
